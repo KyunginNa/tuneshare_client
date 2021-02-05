@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Arial',
     fontSize: 15,
     color: 'black',
-    paddingBottom: 10
+    paddingBottom: 10,
   },
   playButton: {
     color: 'grey',
@@ -65,9 +65,14 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   postDescription: {
-    paddingTop: 20,
-    paddingBottom: 20,
     margin: 20,
+    height: 60,
+    borderColor: '#778899',
+    borderWidth: 1,
+    backgroundColor: '#f2f9fa',
+    color: 'black',
+    fontWeight: 'bold',
+    paddingLeft: 10,
   },
   searchInput: {
     paddingTop: 20,
@@ -134,8 +139,8 @@ const styles = StyleSheet.create({
   },
   loginImage: {
     flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center"
+    resizeMode: 'cover',
+    justifyContent: 'center',
   },
   userInfo: {
     padding: 20,
@@ -149,67 +154,45 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f2f9fa',
   },
-  formContent:{
-    marginTop:30,
+  formContent: {
+    marginTop: 30,
   },
   inputContent: {
-      borderBottomColor: '#F5FCFF',
-      backgroundColor: '#FFFFFF',
-      borderRadius:30,
-      borderBottomWidth: 1,
-      height:45,
-      flexDirection: 'row',
-      alignItems:'center',
-      flex:1,
-      margin:10,
+    borderBottomColor: '#F5FCFF',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 30,
+    borderBottomWidth: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    margin: 10,
   },
-  // icon:{
-  //   width:30,
-  //   height:30,
-  // },
-  // iconBtnSearch:{
-  //   alignSelf:'center'
-  // },
-  // inputs:{
-  //     height:45,
-  //     marginLeft:16,
-  //     borderBottomColor: '#FFFFFF',
-  //     flex:1,
-  // },
-  // inputIcon:{
-  //   marginLeft:15,
-  //   justifyContent: 'center'
-  // },
-  // saveButton: {
-  //   height:45,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   margin:10,
-  //   width:70,
-  //   alignSelf: 'flex-end',
-  //   backgroundColor: '#40E0D0',
-  //   borderRadius:30,
-  // },
-  // saveButtonText: {
-  //   color: 'white',
-  // },
-  searchResultList:{
-    marginTop:20,
-    padding:10,
+  searchButton: {
+    height: 45,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10,
+    width: 70,
+    alignSelf: 'flex-end',
+    backgroundColor: '#40E0D0',
+    borderRadius: 30,
   },
   searchResultBox: {
-    padding:20,
-    marginTop:5,
-    marginBottom:5,
+    padding: 20,
+    marginTop: 5,
+    marginBottom: 5,
     backgroundColor: '#FFFFFF',
     flexDirection: 'row',
-    borderRadius:10,
+    borderRadius: 10,
   },
-  description:{
-    fontSize:18,
-    color: "#3498db",
-    marginLeft:10,
+  description: {
+    fontSize: 18,
+    color: '#3498db',
+    marginLeft: 10,
   },
+  previewCard: {
+    paddingBottom: 300
+  }
 })
 
 export default styles

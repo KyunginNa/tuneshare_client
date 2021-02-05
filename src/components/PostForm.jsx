@@ -6,7 +6,8 @@ import {
   SafeAreaView,
   Text,
   View,
-  ImageBackground
+  ImageBackground,
+  TouchableHighlight
 } from 'react-native'
 import { ListItem, Card } from 'react-native-elements'
 import TrackService from '../modules/TrackService'
@@ -37,17 +38,16 @@ const PostForm = (props) => {
               onChangeText={(text) => setSearch(text)}
               value={search || ''}
             />
-            <Button
+            <TouchableHighlight
               style={styles.searchButton}
               testID="searchButton"
-              title="Search"
-              color="black"
               onPress={() => TrackService.index(search)}
-            />
+            >
+              <Text>Search</Text>
+            </TouchableHighlight>
           </View>
         </View>
         <FlatList
-          style={styles.searchResultList}
           testID="searchResults"
           data={searchResult}
           keyExtractor={(item, index) => index.toString()}
@@ -74,7 +74,7 @@ const PostForm = (props) => {
         />
         {trackDetails && (
           <>
-            <Card testID="trackPreview">
+            <Card testID="trackPreview" style={styles.previewCard}>
               <Card.Title style={styles.track}>{trackDetails.track}</Card.Title>
               <Card.Title style={styles.artists}>
                 {trackDetails.artists}
