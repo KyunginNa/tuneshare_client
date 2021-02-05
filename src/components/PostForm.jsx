@@ -27,25 +27,23 @@ const PostForm = (props) => {
   const image = require('../images/image.png')
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={{ flex: 1, flexDirection: 'column' }}>
       <ImageBackground source={image} style={styles.loginImage}>
-        <View style={styles.formContent}>
-          <View style={styles.inputContent}>
-            <TextInput
-              style={styles.searchInput}
-              testID="searchInput"
-              placeholder="Search a song to create a post!"
-              onChangeText={(text) => setSearch(text)}
-              value={search || ''}
-            />
-            <TouchableHighlight
-              style={styles.searchButton}
-              testID="searchButton"
-              onPress={() => TrackService.index(search)}
-            >
-              <Text>Search</Text>
-            </TouchableHighlight>
-          </View>
+        <View style={styles.inputContent}>
+          <TextInput
+            style={styles.searchInput}
+            testID="searchInput"
+            placeholder="Search a song to create a post!"
+            onChangeText={(text) => setSearch(text)}
+            value={search || ''}
+          />
+          <TouchableHighlight
+            style={styles.searchButton}
+            testID="searchButton"
+            onPress={() => TrackService.index(search)}
+          >
+            <Text>Search</Text>
+          </TouchableHighlight>
         </View>
         <FlatList
           testID="searchResults"
@@ -53,7 +51,7 @@ const PostForm = (props) => {
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <ListItem
-              style={styles.searchResultBox}
+              // style={styles.searchResultBox}
               testID={`result-${item.id}`}
               onPress={() =>
                 store.dispatch({
@@ -72,44 +70,47 @@ const PostForm = (props) => {
             </ListItem>
           )}
         />
-        {trackDetails && (
-          <>
-            <Card testID="trackPreview" style={styles.previewCard}>
-              <Card.Title style={styles.track}>{trackDetails.track}</Card.Title>
-              <Card.Title style={styles.artists}>
-                {trackDetails.artists}
-              </Card.Title>
-              <Card.Divider />
-              <Card.Image
-                style={styles.image}
-                source={{ uri: trackDetails.image }}
+        <View style={styles.formContent}>
+          {trackDetails && (
+            <>
+              <Card testID="trackPreview">
+                <Card.Title style={styles.track}>{trackDetails.track}</Card.Title>
+                <Card.Title style={styles.artists}>
+                  {trackDetails.artists}
+                </Card.Title>
+                <Card.Divider />
+                <Card.Image
+                  style={styles.image}
+                  source={{ uri: trackDetails.image }}
+                >
+                  <TrackPlayer post={trackDetails} />
+                </Card.Image>
+              </Card>
+              <TextInput
+                style={styles.postDescription}
+                placeholder="Write a caption!"
+                testID="descriptionInput"
+                onChangeText={(text) => setDescription(text)}
+              />
+              <TouchableHighlight
+                style={styles.postButton}
+                testID="postButton"
+                color="black"
+                onPress={() =>
+                  PostService.create(
+                    trackDetails,
+                    description,
+                    props.navigation.navigate,
+                    credentials
+                  )
+                }
               >
-                <TrackPlayer post={trackDetails} />
-              </Card.Image>
-            </Card>
-            <TextInput
-              style={styles.postDescription}
-              placeholder="Write a caption!"
-              testID="descriptionInput"
-              onChangeText={(text) => setDescription(text)}
-            />
-            <Button
-              style={styles.postButton}
-              testID="postButton"
-              title="Post"
-              color="black"
-              onPress={() =>
-                PostService.create(
-                  trackDetails,
-                  description,
-                  props.navigation.navigate,
-                  credentials
-                )
-              }
-            />
-          </>
-        )}
-        <Text testID="errorMessage">{errorMessage}</Text>
+                <Text>Post</Text>
+              </TouchableHighlight>
+            </>
+          )}
+          <Text testID="errorMessage">{errorMessage}</Text>
+        </View>
       </ImageBackground>
     </SafeAreaView>
   )

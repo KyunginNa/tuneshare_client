@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#f2f9fa',
     color: 'black',
     fontWeight: 'bold',
-    paddingLeft: 10,
   },
   searchInput: {
     paddingTop: 20,
@@ -150,12 +149,8 @@ const styles = StyleSheet.create({
     color: '#604df0',
     fontSize: 32,
   },
-  container: {
-    flex: 1,
-    backgroundColor: '#f2f9fa',
-  },
   formContent: {
-    marginTop: 30,
+    flex: 20,
   },
   inputContent: {
     borderBottomColor: '#F5FCFF',
@@ -164,7 +159,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    flex: 1,
     margin: 10,
   },
   searchButton: {
@@ -190,9 +184,17 @@ const styles = StyleSheet.create({
     color: '#3498db',
     marginLeft: 10,
   },
-  previewCard: {
-    paddingBottom: 300
-  }
+  postButton: {
+    marginTop: 30,
+    fontSize: 30,
+    alignItems: 'center',
+    width: 70,
+    height: 45,
+    justifyContent: 'center',
+    backgroundColor: '#40E0D0',
+    alignSelf: 'center',
+    borderRadius: 30,
+  },
 })
 
 export default styles
