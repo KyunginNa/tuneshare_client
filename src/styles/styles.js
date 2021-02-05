@@ -144,7 +144,72 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#604df0',
     fontSize: 32,
-  }
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#f2f9fa',
+  },
+  formContent:{
+    marginTop:30,
+  },
+  inputContent: {
+      borderBottomColor: '#F5FCFF',
+      backgroundColor: '#FFFFFF',
+      borderRadius:30,
+      borderBottomWidth: 1,
+      height:45,
+      flexDirection: 'row',
+      alignItems:'center',
+      flex:1,
+      margin:10,
+  },
+  // icon:{
+  //   width:30,
+  //   height:30,
+  // },
+  // iconBtnSearch:{
+  //   alignSelf:'center'
+  // },
+  // inputs:{
+  //     height:45,
+  //     marginLeft:16,
+  //     borderBottomColor: '#FFFFFF',
+  //     flex:1,
+  // },
+  // inputIcon:{
+  //   marginLeft:15,
+  //   justifyContent: 'center'
+  // },
+  // saveButton: {
+  //   height:45,
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   margin:10,
+  //   width:70,
+  //   alignSelf: 'flex-end',
+  //   backgroundColor: '#40E0D0',
+  //   borderRadius:30,
+  // },
+  // saveButtonText: {
+  //   color: 'white',
+  // },
+  searchResultList:{
+    marginTop:20,
+    padding:10,
+  },
+  searchResultBox: {
+    padding:20,
+    marginTop:5,
+    marginBottom:5,
+    backgroundColor: '#FFFFFF',
+    flexDirection: 'row',
+    borderRadius:10,
+  },
+  description:{
+    fontSize:18,
+    color: "#3498db",
+    marginLeft:10,
+  },
 })
 
 export default styles
