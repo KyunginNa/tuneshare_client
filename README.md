@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a mobile application where the user can post their favorite music. We are using the Spotify API to provide music data. To authenticate users on this app, we are using OAuth. Which means that in order to use the app, you have to have an active Spotify account. While on the app you can browse all posts, create your own, comment or like on the post or take a look at your profile to see a list of the songs you have previously posted. In the Post index you will see the title of the song, the artist, the album cover and you also have the ability to listen to a preview of the song for 30 seconds.
+This is a mobile application where the user can post their favorite music. We are using the Spotify API to provide music data. On the app you can browse all posts, create your own posts, comment or like on the post or take a look at your profile to see a list of the songs you have previously posted. In the Feed Screen, you will see the title of the song, the artist, the album cover and you also have the ability to listen to a preview of the song for 30 seconds.
 
 ## The code
 
